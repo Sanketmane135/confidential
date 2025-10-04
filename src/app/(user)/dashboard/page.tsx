@@ -1,11 +1,12 @@
 "use client"
 import React from 'react'
 import { useSession } from "next-auth/react";
+import Image from 'next/image';
     
 
 
 
-function page() {
+function Page() {
  
   const { data: session, status } = useSession();
   if (status === "loading") {
@@ -20,7 +21,7 @@ function page() {
      {
         session ? (
           <div className='flex flex-col items-center justify-center gap-4'>
-            <img  src={session.user?.image ?? "/user.png"}  alt="profile pic" className="w-20 h-20 rounded"/>
+            <Image src={session.user?.image ?? "/user.png"}  alt="profile pic" className="w-20 h-20 rounded"/>
             <h1 className="text-3xl font-bold">Welcome, {session.user?.name}!</h1>
             </div>
         ) : (
@@ -32,4 +33,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

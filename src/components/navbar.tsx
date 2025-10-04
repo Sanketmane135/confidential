@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import LoginButton from './loginbutton'
 import { signIn, signOut, useSession } from "next-auth/react";
+import Link from 'next/link';
 
 function Navbar() {
     
@@ -21,7 +22,7 @@ const [isOpen, setIsOpen] = useState(false);
 
        
 <div>
-    <a href="/dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">DASHBOARD</a>
+    <Link href="/dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">DASHBOARD</Link>
 </div>
 
         {/* Links */}
